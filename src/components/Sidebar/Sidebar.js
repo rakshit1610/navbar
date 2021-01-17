@@ -37,6 +37,16 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    outline:"none",
+    border:"none",
+    '&:focus':{
+      outline:"none",
+      border:"none",
+    },
+    '&:active':{
+      outline:"none",
+      border:"none",
+    },
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
@@ -78,7 +88,14 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "space-between",
     alignItems:"center",
     width: "100%",
-    // background:"red"
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: "flex-end",
+    },
+  },
+  lead: {
+    [theme.breakpoints.down('xs')]: {
+      display: "none"
+    },
   },
   profiledrop:{
     background: "#15171c",
@@ -242,7 +259,7 @@ return (
             <MenuIcon />
           </IconButton>
           <div className={classes.topwrap}>
-          <Typography variant="h6" noWrap>
+          <Typography className={classes.lead} variant="h6" noWrap>
             Lead Management System
           </Typography>
           <div  style={{display: 'flex'}} >
@@ -282,7 +299,7 @@ return (
             }}
           >
             <IconButton onClick={handleDrawerToggle} className={classes.closeMenuButton}>
-              <CloseIcon/>
+              <CloseIcon style={{color:"white"}}/>
             </IconButton>
             {drawer}
           </Drawer>

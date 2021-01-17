@@ -22,22 +22,19 @@
   margin:0 !important;
 }
 
-/* .MuiTouchRipple-root  {
-  display: none;
-} */
 
-.ForwardRef-root-17 {
+.ForwardRef-root-18 {
   padding-right: 4px;
 }
 
-.ForwardRef-iconButton-18{
+.ForwardRef-iconButton-19{
   width: 36px !important;
   outline:none !important;
   border:none !important;
 }
 
-.ForwardRef-iconButton-18:focus{
+.ForwardRef-iconButton-19:focus{
   outline:none !important;
   border:none !important;
-
 }
+
