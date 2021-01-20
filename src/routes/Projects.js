@@ -1,15 +1,15 @@
 import React, { Component } from "react"
-import Sidebar from '../components/Sidebar/Sidebar';
+import { withRouter } from "react-router";
 
-class Home extends Component {
+class Projects extends Component {
     render() {
         return(
             <>
             {/* <Sidebar /> */}
-            <h1>project</h1>
+            <h1>this is a project</h1>
             </>
         )
 }
 }
 
-export default Home;
+export default withRouter(Projects);

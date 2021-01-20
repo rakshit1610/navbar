@@ -8,14 +8,14 @@ import Projects from './routes/Projects';
 function App() {
   return (
     <Router>
-
       <Sidebar>
       <Switch>
     <Home exact path="/" />
-    <Projects exact path="/viewprojects" />
+    <Projects path="/viewprojects" />
     </Switch>
     </Sidebar>
 
+    
     </Router>
   );
 }

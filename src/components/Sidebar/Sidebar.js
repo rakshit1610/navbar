@@ -19,6 +19,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { withRouter } from "react-router";
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -139,6 +140,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 function ResponsiveDrawer(props) {
+  console.log(props);
 
   const classes = useStyles();
   const theme = useTheme();
@@ -244,6 +246,8 @@ const drawer = (
 </>
   );
 
+  if(props.location.pathname!='/viewprojects')
+  {
 return (
     <div className={classes.root}>
       <CssBaseline />
@@ -324,10 +328,21 @@ return (
       </div>
     </div>
   );
+  }
+
+  else{
+    return (
+      <div className={classes.content}>
+        <div className={classes.toolbar} />
+        {/* <VisibleItemList /> */}
+        {props.children}
+      </div>
+    );
+  }
 }
 ResponsiveDrawer.propTypes = {
   // Injected by the documentation to work in an iframe.
   // You won't need it on your project.
   container: PropTypes.object,
 };
-export default ResponsiveDrawer;
+export default withRouter(ResponsiveDrawer);
